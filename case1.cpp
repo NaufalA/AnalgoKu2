@@ -15,7 +15,7 @@ int main()
     }
 
     int max = input[0];
-    int i = 2;
+    int i = 1;
     while (i <= n)
     {
         if (input[i] > max)

@@ -24,6 +24,7 @@ int main()
         }
         input[j] = insert;
     }
+
     for (auto i : input)
     {
         std::cout << i << " ";
