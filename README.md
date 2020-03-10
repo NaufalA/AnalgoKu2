@@ -5,13 +5,13 @@ Naufal Aulia - 140810180074
 ## Kasus 1 Pencarian Nilai Maksimal
 
 ```cpp
-int max = input[0];             // 2 operasi
+int {max} = input[0];             // 2 operasi
 int i = 1;                      // 2 operasi
 
 while (i <= n)                  // n-1 operasi
 {
-    if (input[i] > max)         // n-2 operasi
-        max = input[i];         // 0 s.d. n-2 operasi
+    if (input[i] > {max})         // n-2 operasi
+        {max} = input[i];         // 0 s.d. n-2 operasi
     i = i + 1;                  // 2(n-1) operasi
 }
 ```
@@ -24,7 +24,7 @@ Tavg(n) = 2+2+(n-1)+(n-2)+(n-2)/2+2(n-1) = 3.5n-2
 
 Tmax(n) = 2+2+(n-1)+(n-2)+(n-2)+2(n-1) = 4n-3
 
-## Kasus 2 _Sequetial Search_
+## Kasus 2 _Sequential Search_
 
 ```cpp
 int idx;                        // 1 operasi
@@ -95,16 +95,22 @@ else
 
 ### Kompleksitas Waktu
 
+Tmin(n) = O(1)
+
+Tavg(n) = O(log n)
+
+Tmax(n) = O(log n)
+
 
 ## Kasus 4 _Insertion Sort_
 
 ```cpp
 int i, j, insert;                       // 3 operasi
 
-for (i = 1; i < n; i++)
+for (i = 1; i < n; i++)                     // n operasi
 {
-    insert = input[i];
-    j = i;
+    insert = input[i];                      // n-1 operasi
+    j = i;                                  // n-1 operasi
     while (j > 0 && input[j - 1] > insert)
     {
         input[j] = input[j - 1];
@@ -116,27 +122,38 @@ for (i = 1; i < n; i++)
 
 ### Kompleksitas Waktu
 
+Tmin(n) = n
+
+Tavg(n) = n^2
+
+Tmax(n) = n^2
+
 
 ## Kasus 5 _Selection Sort_
 
 ```cpp
-int i, j, imax, temp;                   // 4 operasi
+int i, j, i{max}, temp;                   // 4 operasi
 
 for (i = n - 1; i >= 1; i--)
 {
-    imax = 0;
+    i{max} = 0;
     for (j = 1; j <= i; j++)
     {
-        if (input[j] > input[imax])
+        if (input[j] > input[i{max}])
         {
-            imax = j;
+            i{max} = j;
         }
     }
     temp = input[i];
-    input[i] = input[imax];
-    input[imax] = temp;
+    input[i] = input[i{max}];
+    input[i{max}] = temp;
 }
 ```
 
 ### Kompleksitas Waktu
 
+Tmin(n) = n^2
+
+Tavg(n) = n^2
+
+Tmax(n) = n^2
